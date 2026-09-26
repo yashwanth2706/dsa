@@ -88,6 +88,11 @@ class LinkedList:
         if self.head is None:
             self.display('stack empty')
             return
+        
+        if self.head.next is None:
+            self.head = None
+            return
+        
         prev = None
         current = self.head
         while current:
@@ -104,44 +109,48 @@ class LinkedList:
         pass
 
 stack = LinkedList()
-stack.display("STACK-START")
-stack.add_rear(1)
-stack.add_rear(2)
-stack.add_rear(3)
-stack.add_rear(4)
-stack.add_rear(5)
+stack.add_top(1)
 stack.display()
-stack.peek_top()
-stack.pop_top()
+stack.pop_rear()
 stack.display()
-stack.add_top(10)
-stack.add_top(20)
-stack.add_top(30)
-stack.display()
-stack.display("STACK-END")
-
-queue = LinkedList()
-
-deque = LinkedList()
-
-ll = LinkedList()
-ll.add_top(1)
-ll.add_top(2)
-ll.add_top(3)
-ll.add_top(4)
-ll.add_top(5)
-ll.display()
-ll.peek_top()
-ll.peek_rear()
-ll.reverse()
-ll.display()
-ll.peek_top()
-ll.peek_rear()
-ll.add_top(100)
-ll.display()
-ll.pop_top()
-ll.display()
-ll.peek_rear()
-ll.display()
-ll.pop_rear()
-ll.display()
+#stack.display("STACK-START")
+#stack.add_rear(1)
+#stack.add_rear(2)
+#stack.add_rear(3)
+#stack.add_rear(4)
+#stack.add_rear(5)
+#stack.display()
+#stack.peek_top()
+#stack.pop_top()
+#stack.display()
+#stack.add_top(10)
+#stack.add_top(20)
+#stack.add_top(30)
+#stack.display()
+#stack.display("STACK-END")
+#
+#queue = LinkedList()
+#
+#deque = LinkedList()
+#
+#ll = LinkedList()
+#ll.add_top(1)
+#ll.add_top(2)
+#ll.add_top(3)
+#ll.add_top(4)
+#ll.add_top(5)
+#ll.display()
+#ll.peek_top()
+#ll.peek_rear()
+#ll.reverse()
+#ll.display()
+#ll.peek_top()
+#ll.peek_rear()
+#ll.add_top(100)
+#ll.display()
+#ll.pop_top()
+#ll.display()
+#ll.peek_rear()
+#ll.display()
+#ll.pop_rear()
+#ll.display()
