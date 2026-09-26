@@ -8,9 +8,6 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-    def add_node(self, data):
-        self.add_rear(data)
-
     def add_rear(self, data):
 
         new_node = Node(data)
@@ -33,9 +30,8 @@ class LinkedList:
             return
 
         current = self.head
-        next_node = current.next
         self.head = new_node
-        new_node.next = next_node
+        new_node.next = current
 
     def peek_top(self):
         current = self.head
@@ -93,6 +89,21 @@ class LinkedList:
         pass
 
 stack = LinkedList()
+stack.display("STACK-START")
+stack.add_rear(1)
+stack.add_rear(2)
+stack.add_rear(3)
+stack.add_rear(4)
+stack.add_rear(5)
+stack.display()
+stack.peek_top()
+stack.pop_top()
+stack.display()
+stack.add_top(10)
+stack.add_top(20)
+stack.add_top(30)
+stack.display()
+stack.display("STACK-END")
 
 queue = LinkedList()
 
