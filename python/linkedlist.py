@@ -34,10 +34,16 @@ class LinkedList:
         new_node.next = current
 
     def peek_top(self):
+        if self.head is None:
+            self.display('stack empty')
+            return
         current = self.head
         self.display(current.data)
 
     def peek_rear(self):
+        if self.head is None:
+            self.display('stack empty')
+            return
         current = self.head
         while current:
             prev = current
@@ -58,6 +64,9 @@ class LinkedList:
         print()
 
     def reverse(self):
+        if self.head is None:
+            self.display('stack empty')
+            return
         prev = None
         current = self.head
         while current:
@@ -68,11 +77,17 @@ class LinkedList:
         self.head = prev
 
     def pop_top(self):
+        if self.head is None:
+            self.display('stack empty')
+            return
         current = self.head
         next_node = current.next
         self.head = next_node
 
     def pop_rear(self):
+        if self.head is None:
+            self.display('stack empty')
+            return
         prev = None
         current = self.head
         while current:
