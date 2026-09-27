@@ -4,7 +4,7 @@ class Node:
         self.next = None
         self.prev = None
 
-class LinkedList:
+class DoublyLinkedList:
 
     def __init__(self):
         self.head = None
@@ -45,11 +45,8 @@ class LinkedList:
         if self.head is None:
             self.display('stack empty')
             return
-        current = self.head
-        while current:
-            prev = current
-            current = current.next
-        self.display(prev.data)
+        current = self.tail
+        self.display(current.data)
 
 
     def display(self, default=None):
@@ -89,19 +86,14 @@ class LinkedList:
         if self.head is None:
             self.display('stack empty')
             return
-        
+
         if self.head.next is None:
             self.head = None
+            self.tail = None
             return
-        
-        prev = None
-        current = self.head
-        while current:
-            if current.next is None:
-                prev.next = None
-                return
-            prev = current
-            current = current.next
+
+        self.tail = self.tail.prev
+        self.tail.next = None
 
     def update(self, index, data):
         pass
@@ -109,9 +101,18 @@ class LinkedList:
     def delete(self, index, data):
         pass
 
-stack = LinkedList()
+stack = DoublyLinkedList()
 stack.add_top(1)
+stack.add_top(2)
+stack.add_top(3)
+stack.add_top(4)
 stack.display()
+stack.pop_rear()
+stack.display()
+stack.peek_rear()
+stack.pop_rear()
+stack.display()
+stack.peek_rear()
 stack.pop_rear()
 stack.display()
 #stack.display("STACK-START")
